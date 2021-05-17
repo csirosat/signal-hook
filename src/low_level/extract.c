@@ -2,6 +2,12 @@
  * Low-level extraction code to overcome rust's libc not having the best access
  * to siginfo_t details.
  */
+
+/*
+ * define _XOPEN_SOURCE to enable `uid_t` from the buildroot headers
+ */
+#define _XOPEN_SOURCE 700
+
 #include <stdbool.h>
 #include <signal.h>
 #include <stdint.h>
